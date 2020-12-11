@@ -27,9 +27,7 @@ export default function LandingPage() {
   }, [])
 
   const removeFromList = (uuid) => {
-    setProducts(products.filter((item => {
-      return item.id !== uuid
-    })))
+    setProducts(products.filter(item => item.id !== uuid))
   }
 
   return [

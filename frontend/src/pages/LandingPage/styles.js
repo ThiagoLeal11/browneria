@@ -30,6 +30,22 @@ export const Subtitle = styled.p`
 `;
 
 export const Button = styled.button`
+  color: #fff;
+  font-size: 16px;
+  background: #372623;
+  font-family: 'Roboto';
+  height: 56px;
+  border: 0;
+  border-radius: 5px;
+  margin: 40px auto 24px auto;
+  display: block;
+  width: 200px;
+  cursor: pointer;
+  will-change: background;
+  transition: background 0.3s ease;
   
+  :hover {
+    background: #4B3B38;
+  }
 `;
 

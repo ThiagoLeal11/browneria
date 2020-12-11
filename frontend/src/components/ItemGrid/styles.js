@@ -17,12 +17,20 @@ export const Item = styled.div`
 
 export const Close = styled.div`
   background-color: red;
-  width: 16px;
-  height: 16px;
-  border-radius: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
   position: absolute;
   top: -4px;
   right: -4px;
+
+  :after {
+    content: "x";
+    color: #fff;
+    position: absolute;
+    top: 1px;
+    right: 7px;
+  }
 `;
 
 export const Image = styled.div`
