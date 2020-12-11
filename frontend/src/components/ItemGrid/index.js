@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Item, Image, Title, Close } from "./styles"
+import { Container, Item, Image, Title, Close, Message } from "./styles"
 import api from "../../services/api";
 
 export default function ItemGrid({ data, isAuthenticated, onDelete }) {
@@ -17,7 +17,7 @@ export default function ItemGrid({ data, isAuthenticated, onDelete }) {
           ))}
         </Container>
       ) : (
-        <p>Sem produtos cadastrados ainda</p>
+        <Message>Sem produtos cadastrados ainda</Message>
       )}
 
     </>

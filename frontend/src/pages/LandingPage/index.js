@@ -5,6 +5,7 @@ import NavBar from "../../components/NavBar"
 import Header from "../../components/Header"
 import ItemGrid from "../../components/ItemGrid"
 import Modal from "../../components/Modal"
+import Map from "../../components/Map"
 
 import { isAuthenticated } from "../../services/auth"
 import api from "../../services/api";
@@ -66,6 +67,7 @@ export default function LandingPage() {
     <Container>
       <Title>Pertinho de você</Title>
       <Subtitle>A dois pulos de onde você está, é só colar</Subtitle>
+      <Map/>
       
     </Container>
   ]

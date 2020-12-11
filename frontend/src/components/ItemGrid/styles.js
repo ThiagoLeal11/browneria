@@ -59,3 +59,12 @@ export const Title = styled.h4`
     margin-bottom: 8px;
   }
 `;
+
+export const Message = styled.p`
+  color: #372623;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  margin: 48px 0;
+`;

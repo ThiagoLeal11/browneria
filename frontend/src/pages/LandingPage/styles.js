@@ -5,9 +5,9 @@ export const Container =  styled.div`
   margin: 0 auto;
   padding: 64px;
 
-  :not(:first-of-type) {
-    margin-top: 72px;
-  }
+  /* :not(:first-of-type) {
+    margin-top: 32px;
+  } */
 `;
 
 export const Title = styled.h2`
