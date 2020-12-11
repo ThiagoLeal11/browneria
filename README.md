@@ -26,6 +26,9 @@ Navegue até `browneria/` e execute o comando `docker-compose up --build -d`, co
 docker ira subir os containers necessários. O parametro `-d` é opcional, caso você não 
 queria que o STDOUT dos containers esteja atralado ao seu terminal.
 
+É importante ressaltar que o container do frontend pode demorar um pouco até terminar de compilar
+os recursos necessários, isso pode levar até 5 minutos depis que o container foi iniciado.
+
 ### 3. Execute as migrações do banco de dados
 Ainda no caminho `browneria/` execute `docker-compose run app python manage.py migrate`, 
 para aplicar as migrações necessárias no banco de dados e, nesse caso, construir as 
