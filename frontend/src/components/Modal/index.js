@@ -10,7 +10,6 @@ export default function Dialog({
   onCancel,
 }) {
   const [state, setState] = useState({title: "", error:""})
-  
 
   const handleCreate = async e => {
     e.preventDefault();
@@ -31,7 +30,6 @@ export default function Dialog({
     }
   }
 
-
   return (
     <Overlay show={visible}>
       <Modal onSubmit={handleCreate}>
@@ -41,6 +39,7 @@ export default function Dialog({
           type="title"
           placeholder="Título do Brownie"
           onChange={e => setState({ title: e.target.value })}
+          value={state.title || ''}
         />
         <Button type="submit">Cadastrar</Button>
         <ButtonWhite type="cancel" onClick={onCancel}>Cancelar</ButtonWhite>

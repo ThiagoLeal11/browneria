@@ -26,9 +26,23 @@ export default function LandingPage() {
     fetchData();
   }, [])
 
+  const addToList = (obj) => {
+    setProducts([...products, obj])
+  }
+
   const removeFromList = (uuid) => {
     setProducts(products.filter(item => item.id !== uuid))
   }
+
+  const deleteProduct = async uuid => {
+    try {
+      await api.delete(`/api/product/detail/${uuid}/`)
+      removeFromList(uuid)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   return [
     <NavBar />,
@@ -38,13 +52,13 @@ export default function LandingPage() {
       onCancel={() => setModelVisibility(false)}
       onAccept={(data) => {
         setModelVisibility(false)
-        setProducts([...products, data])
+        addToList(data)
       }}
     />,
     <Container>
       <Title>Para todos os gostos</Title>
       <Subtitle>E ai, qual vai ser o sabor de hoje?</Subtitle>
-      <ItemGrid data={products} isAuthenticated={isAuthenticated()} onDelete={uuid => removeFromList(uuid)}></ItemGrid>
+      <ItemGrid data={products} isAuthenticated={isAuthenticated()} onDelete={uuid => deleteProduct(uuid)} />
       {isAuthenticated() ? (
         <Button onClick={e => setModelVisibility(true)}>Adicionar Brownie</Button>
       ) : null}
