@@ -3,7 +3,7 @@ services:
   web:
     restart: unless-stopped
     image: node:14.15.1
-    command: yarn start
+    command: "npm run start"
     volumes:
       - ./frontend/:/home/app/web/
     working_dir: /home/app/web/
