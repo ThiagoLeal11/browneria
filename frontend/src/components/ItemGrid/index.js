@@ -3,11 +3,12 @@ import React from 'react';
 import { Container, Item, Image, Title, Close } from "./styles"
 import api from "../../services/api";
 
-export default function ItemGrid({ data, isAuthenticated }) {
+export default function ItemGrid({ data, isAuthenticated, onDelete }) {
 
   async function del(uuid) {
     try {
       await api.delete(`/api/product/detail/${uuid}/`)
+      onDelete(uuid)
     } catch (err) {
       console.log(err)
     }

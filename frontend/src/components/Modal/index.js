@@ -21,7 +21,7 @@ export default function Dialog({
       try {
         const response = await api.post("/api/product/", { title });
         setState({error: ""});
-        onAccept()
+        onAccept(response.data.product)
       } catch (err) {
         setState({
           error:

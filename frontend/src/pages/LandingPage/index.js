@@ -26,18 +26,27 @@ export default function LandingPage() {
     fetchData();
   }, [])
 
+  const removeFromList = (uuid) => {
+    setProducts(products.filter((item => {
+      return item.id !== uuid
+    })))
+  }
+
   return [
     <NavBar />,
     <Header />,
     <Modal 
       visible={isModalVisible}
       onCancel={() => setModelVisibility(false)}
-      onAccept={() => setModelVisibility(false)}
+      onAccept={(data) => {
+        setModelVisibility(false)
+        setProducts([...products, data])
+      }}
     />,
     <Container>
       <Title>Para todos os gostos</Title>
       <Subtitle>E ai, qual vai ser o sabor de hoje?</Subtitle>
-      <ItemGrid data={products} isAuthenticated={isAuthenticated}></ItemGrid>
+      <ItemGrid data={products} isAuthenticated={isAuthenticated} onDelete={uuid => removeFromList(uuid)}></ItemGrid>
       {isAuthenticated? (
         <Button onClick={e => setModelVisibility(true)}>Adicionar Brownie</Button>
       ) : null}
