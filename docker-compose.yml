@@ -1,14 +1,14 @@
 version: '3'
 services:
-#  web:
-#    restart: unless-stopped
-#    image: node:14.15.1
-#    command: yarn start
-#    volumes:
-#      - ./frontend/:/home/app/web/
-#    working_dir: /home/app/web/
-#    ports:
-#      - 3000:3000
+  web:
+    restart: unless-stopped
+    image: node:14.15.1
+    command: "npm run start"
+    volumes:
+      - ./frontend/:/home/app/web/
+    working_dir: /home/app/web/
+    ports:
+      - 3000:3000
 #    networks:
 #      - nginx_network
 
