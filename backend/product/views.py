@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from product.deserializers import ProductDeserializer
 from product.models import Product
 from product.serializers import ProductSerializer, ProductDetailSerializer
-from responses.common import ok_response, not_found_response, error_response
+from responses.common import ok_response, not_found_response, error_response, forbidden_response
 
 
 class ProductListCreateView(APIView):
@@ -18,10 +18,10 @@ class ProductListCreateView(APIView):
 
     @staticmethod
     def post(request):
-        print('come here, ok')
-        data = request.data
-        print(data)
-        deserializer = ProductDeserializer(data=data)
+        if not request.user.is_authenticated:
+            return forbidden_response({'user': ['Need to be authenticated.']})
+
+        deserializer = ProductDeserializer(data=request.data)
 
         if not deserializer.is_valid():
             return error_response(deserializer.errors)

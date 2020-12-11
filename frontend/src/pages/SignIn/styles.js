@@ -14,16 +14,20 @@ export const Logo = styled.div`
   line-height: 64px;
 `;
 
-export const Form = styled.form`
+export const Card = styled.div`
   width: 400px;
   background: #FFF;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 
   img {
     width: 100px;
@@ -56,24 +60,6 @@ export const Form = styled.form`
     }
   }
 
-  button {
-    color: #fff;
-    font-size: 16px;
-    background: #372623;
-    font-family: 'Roboto';
-    height: 56px;
-    border: 0;
-    border-radius: 5px;
-    width: 100%;
-    cursor: pointer;
-    will-change: background;
-    transition: background 0.3s ease;
-    
-    :hover {
-      background: #4B3B38;
-    }
-  }
-
   hr {
     margin: 20px 0;
     border: none;
@@ -87,5 +73,30 @@ export const Form = styled.form`
     padding: 8px;
     color: #372623;
     text-decoration: none;
+  }
+`;
+
+export const MessageText = styled.p`
+  text-align: center;
+  font-family: 'Roboto';
+  color: #372623;
+  margin: 24px 0;
+`;
+
+export const Button = styled.button`
+  color: #fff;
+  font-size: 16px;
+  background: #372623;
+  font-family: 'Roboto';
+  height: 56px;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  will-change: background;
+  transition: background 0.3s ease;
+  
+  :hover {
+    background: #4B3B38;
   }
 `;

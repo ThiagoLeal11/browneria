@@ -44,8 +44,8 @@ export default function LandingPage() {
     <Container>
       <Title>Para todos os gostos</Title>
       <Subtitle>E ai, qual vai ser o sabor de hoje?</Subtitle>
-      <ItemGrid data={products} isAuthenticated={isAuthenticated} onDelete={uuid => removeFromList(uuid)}></ItemGrid>
-      {isAuthenticated? (
+      <ItemGrid data={products} isAuthenticated={isAuthenticated()} onDelete={uuid => removeFromList(uuid)}></ItemGrid>
+      {isAuthenticated() ? (
         <Button onClick={e => setModelVisibility(true)}>Adicionar Brownie</Button>
       ) : null}
     </Container>,

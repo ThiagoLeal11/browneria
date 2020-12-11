@@ -24,3 +24,13 @@ def not_found_response(message):
             'code': 'not_found'
         }, status=status.HTTP_404_NOT_FOUND
     )
+
+
+def forbidden_response(error):
+    return Response(
+        {
+            'detail': 'Not allowed to perform this action.',
+            'code': 'permission_denied',
+            'errors': error
+        }, status=status.HTTP_403_FORBIDDEN
+    )
