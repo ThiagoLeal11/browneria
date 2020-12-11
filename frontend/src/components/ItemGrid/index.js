@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Container, Item, Image, Title, Close, Message } from "./styles"
-import api from "../../services/api";
 
 export default function ItemGrid({ data, isAuthenticated, onDelete }) {
   return (
